@@ -19,12 +19,76 @@
         }
     }
     
-    console.log (computerPlay())
+function playRound (playerSelection, computerSelection) {
+        if (playerSelection === 'rock' || 'Rock' || 'ROCK') {
+            switch (computerSelection) {
+                case 'Rock': 
+                return ('You draw. Try again!');
+                break;
 
+                case 'Paper':
+                return ('You lose! Paper beats Rock');
+                break;
 
-    function playRound (playerSelection, computerSelection) {
+                default:
+                return ('You win! Rock beats Scissors');
+            }
+        }
+        else if (playerSelection === 'paper' || 'Paper' || 'PAPER') {
+            switch (computerSelection) {
+                case 'Paper':
+                return ('You draw. Try again!');
+                break;
+
+                case 'Scissors':
+                return ('You lose! Scissors beats Paper');
+                break;
+
+                default:
+                return ('You win! Rock beats Scissors');
+             }
+        }
+        else { 
+            switch (computerSelection) {
+                case 'Scissors':
+                return ('You draw. Try again!');
+                break;
+
+                case 'Rock':
+                return ('You lose! Rock beats Scissors')
+                break;
+
+                default:
+                return ('You win! Scissors beats Paper');
+             }
+        }
     }
+    
+let playerSelection;
+let computerSelection;
 
+function game() {
+    for (i=0; i<5; i++){
+    playerSelection = prompt('Rock, Paper or Scissors?');
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+    if (playRound(playerSelection, computerSelection).includes('win')) {
+        playScore++;
+        console.log(playRound(playerSelection, computerSelection));
+    } else if (playRound(playerSelection, computerSelection).includes('lose')) {
+        computerScore++;
+        console.log(playRound(playerSelection, computerSelection));
+    } else {tieScore++;
+        console.log(playRound(playerSelection, computerSelection));
+    }}}
+
+let i;
+let playScore = 0;
+let computerScore = 0;
+let tieScore = 0;
+game();
+const result = playScore > computerScore ? 'You win. Well done!' : 'You lose, try again!';
+console.log (result);
 </script>
 
 </body>
