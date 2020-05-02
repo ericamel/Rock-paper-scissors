@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <meta charset="UTF-8"/>
+    </head>
+
+    <body>
+<script>
+    function computerPlay () {
+        let random = Math.random()
+        if (random < .3) {
+            return ('Rock');
+        } else if (random > .6) {
+            return ('Scissors');
+        } else {
+            return ('Paper');
+        }
+    }
+    
+    console.log (computerPlay())
+
+
+    function playRound (playerSelection, computerSelection) {
+    }
+
+</script>
+
+</body>
+</html>
