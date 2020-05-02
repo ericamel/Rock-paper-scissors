@@ -71,10 +71,10 @@ function game() {
     for (i=0; i<5; i++){
     playerSelection = prompt('Rock, Paper or Scissors?');
     computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    if (playRound(playerSelection, computerSelection).includes('win')) {
+    let playString = playRound(playerSelection, computerSelection)
+    if (playString.includes('win')) {
         playScore++;
-        console.log(playRound(playerSelection, computerSelection));
+        console.log(playString);
     } else if (playRound(playerSelection, computerSelection).includes('lose')) {
         computerScore++;
         console.log(playRound(playerSelection, computerSelection));
